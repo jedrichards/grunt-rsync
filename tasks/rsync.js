@@ -10,16 +10,18 @@ module.exports = function (grunt) {
         var options = this.data;
         var host = typeof options.host === "undefined" ? "" : options.host+":";
 
-        grunt.log.write("rsyncing "+options.src+" > "+host+options.dest);
+        grunt.log.write(options.src+" > "+host+options.dest);
 
         try {
-            rsync(options,function (error,stdout,stderr) {
+            rsync(options,function (error,stdout,stderr,cmd) {
                 if ( error ) {
                     grunt.log.writeln(" error".red);
+                    grunt.log.writeln(cmd.grey);
                     grunt.log.writeln(error.toString().red);
                     done(false);
                 } else {
                     grunt.log.writeln(" done".green);
+                    grunt.log.writeln(cmd.grey);
                     grunt.log.write(stdout);
                     done(true);
                 }
