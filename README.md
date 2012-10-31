@@ -41,6 +41,6 @@ rsync: {
 }
 ```
 
-### Wildcards, excluding and globbing
+### Wildcards, exclude patterns, globbing etc.
 
-Any wildcards, pattern matching and globbing of paths and exclude patterns are handled by rsync itself. So this task does not use Grunt's in-built path expanding and globbing at all. For more information on rsync's sytax check the [rsync manpages](http://linux.die.net/man/1/rsync).
+Any wildcards, exclude patterns and globbing of paths are handled by rsync itself. So importantly this task does **not** use Grunt's in-built path expanding and globbing at all. For more information on rsync's sytax check the [rsync manpages](http://linux.die.net/man/1/rsync). For information about how this task's options relate to rsync's functionality check [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper).
