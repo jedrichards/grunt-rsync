@@ -2,6 +2,16 @@
     "name": "grunt-rsync",
     "version": "0.0.1",
     "description": "A Grunt task for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the rsyncwrapper npm module for the core functionality.",
+    "main": "grunt.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jedrichards/grunt-rsync.git"
+    },
+    "homepage": "https://github.com/jedrichards/grunt-rsync",
+    "bugs": "https://github.com/jedrichards/grunt-rsync/issues",
+    "scripts": {
+        "test": "grunt test"
+    },
     "dependencies": {
         "rsyncwrapper": "~0.0.4"
     },
@@ -12,10 +22,6 @@
         "grunt-vows": "~0.2.0",
         "grunt-shell": "~0.1.0"
     },
-    "scripts" : {
-        "test": "grunt test"
-     },
-    "repository": "",
     "keywords": [
         "rsync",
         "grunt plugin",
@@ -28,6 +34,12 @@
         "ssh",
         "exclude patterns"
     ],
-    "author": "Jed Richards",
-    "license": "MIT"
+    "author": {
+        "name": "Jed Richards",
+        "email": "jed@seisaku.co.uk"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.8.0"
+    }
 }

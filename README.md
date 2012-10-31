@@ -47,6 +47,6 @@ Any wildcards, exclude patterns and globbing of paths are handled by rsync itsel
 
 ### Testing
 
-Basic tests are run on [Vows Async BDD](http://vowsjs.org/) via this package's Gruntfile. To test grunt-rsync install it with the devDependancies, ensure that Grunt and Vows are installed globally, and then invoke:
+Basic tests are run on [Vows Async BDD](http://vowsjs.org/) via this package's Gruntfile. To test grunt-rsync clone the repo and ensure that the devDependancies are present. Additionally ensure that Grunt and Vows are installed globally, and then invoke:
 
     $ npm test
