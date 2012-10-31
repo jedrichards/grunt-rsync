@@ -16,7 +16,7 @@ module.exports = function (grunt) {
             rsync(options,function (error,stdout,stderr) {
                 if ( error ) {
                     grunt.log.writeln(" error".red);
-                    grunt.log.writeln(error.message.red);
+                    grunt.log.writeln(error.toString().red);
                     done(false);
                 } else {
                     grunt.log.writeln(" done".green);

@@ -26,7 +26,7 @@ rsync: {
     },
     deploy-staging: {
         src: "../dist/",
-        dest: "/var/www/site-staging",
+        dest: "/var/www/site",
         host: "user@staging-host",
         recursive: true,
         syncDest: true
@@ -44,3 +44,9 @@ rsync: {
 ### Wildcards, exclude patterns, globbing etc.
 
 Any wildcards, exclude patterns and globbing of paths are handled by rsync itself. So importantly this task does **not** use Grunt's in-built path expanding and globbing at all. For more information on rsync's sytax check the [rsync manpages](http://linux.die.net/man/1/rsync). For information about how this task's options relate to rsync's functionality check [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper).
+
+### Testing
+
+Basic tests are run on [Vows Async BDD](http://vowsjs.org/) via this package's Gruntfile. To test grunt-rsync install it with the devDependancies, ensure that Grunt and Vows are installed globally, and then invoke:
+
+    $ npm test
