@@ -4,10 +4,15 @@ var rsync = require("rsyncwrapper").rsync;
 
 module.exports = function (grunt) {
 
-    grunt.registerMultiTask("rsync","Perform rsync tasks.",function () {
+    grunt.registerMultiTask("rsync","Performs rsync tasks.",function () {
 
         var done = this.async();
+
         var options = this.data;
+
+        options.src = this.file.src;
+        options.dest = this.file.dest;
+
         var host = typeof options.host === "undefined" ? "" : options.host+":";
 
         grunt.log.write(options.src+" > "+host+options.dest);
