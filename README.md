@@ -14,7 +14,7 @@ A reasonably modern version of rsync (>=2.6.9) in your PATH.
 
 Add a `rsync` object to your Grunt config and `grunt.loadNpmTasks("grunt-rsync")`.
 
-All options defined in the config are past verbatim to [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper), so check that project's readme for more details on the possible options.
+All options defined in the config are passed verbatim to [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper), so check that project's readme for more details on the possible options.
 
 For example, the following task config defines three targets. The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS. The `deploy-staging` and `deploy-live` targets could be used to copy the distribution to the relevant remote hosts over ssh.
 
