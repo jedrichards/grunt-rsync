@@ -15,6 +15,9 @@ module.exports = function (grunt) {
 
         var host = typeof options.host === "undefined" ? "" : options.host+":";
 
+        // fix dest error when run with grunt watch
+        options.dest = options.dest.replace(host, "");
+
         grunt.log.write(options.src+" > "+host+options.dest);
 
         try {
