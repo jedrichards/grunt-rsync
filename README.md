@@ -4,8 +4,8 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Grunt compatability
 
-`v0.1.0` and above should be Grunt `v0.4` compatible
-`v0.0.5` and below are Grunt `v0.3` compatible
+- `v0.1.0` and above should be Grunt `v0.4` compatible
+- `v0.0.5` and below are Grunt `v0.3` compatible
 
 If you're upgrading to Grunt `v0.4` you shouldn't need to make any changes to your existing `grunt-rsync` task config, just be sure to `npm install` the latest version. But be sure to place an issue if you have any problems.
 
