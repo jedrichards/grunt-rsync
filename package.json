@@ -1,46 +1,49 @@
 {
-    "name": "grunt-rsync",
-    "version": "0.0.5",
-    "description": "A Grunt task for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the rsyncwrapper npm module for the core functionality.",
-    "main": "grunt.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/jedrichards/grunt-rsync.git"
-    },
-    "homepage": "https://github.com/jedrichards/grunt-rsync",
-    "bugs": "https://github.com/jedrichards/grunt-rsync/issues",
-    "scripts": {
-        "test": "grunt test"
-    },
-    "dependencies": {
-        "rsyncwrapper": "~0.0.7"
-    },
-    "devDependencies": {
-        "grunt": "~0.3.17",
-        "grunt-contrib-clean": "~0.3.0",
-        "vows": "~0.6.0",
-        "grunt-vows": "~0.2.0",
-        "grunt-shell": "~0.1.0"
-    },
-    "keywords": [
-        "rsync",
-        "grunt plugin",
-        "gruntplugin",
-        "grunt",
-        "grunt task",
-        "syncing",
-        "copying",
-        "file manipulation",
-        "remote",
-        "ssh",
-        "exclude patterns"
-    ],
-    "author": {
-        "name": "Jed Richards",
-        "email": "jed@seisaku.co.uk"
-    },
-    "license": "MIT",
-    "engines": {
-        "node": ">=0.8.0"
-    }
+  "name": "grunt-rsync",
+  "version": "0.0.5",
+  "description": "A Grunt task for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the rsyncwrapper npm module for the core functionality.",
+  "main": "grunt.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jedrichards/grunt-rsync.git"
+  },
+  "homepage": "https://github.com/jedrichards/grunt-rsync",
+  "bugs": "https://github.com/jedrichards/grunt-rsync/issues",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "rsyncwrapper": "~0.0.7"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "vows": "~0.6.0",
+    "grunt-vows": "~0.2.0",
+    "grunt-shell": "~0.2.1"
+  },
+  "keywords": [
+    "rsync",
+    "grunt plugin",
+    "gruntplugin",
+    "grunt",
+    "grunt task",
+    "syncing",
+    "copying",
+    "file manipulation",
+    "remote",
+    "ssh",
+    "exclude patterns"
+  ],
+  "author": {
+    "name": "Jed Richards",
+    "email": "jed@seisaku.co.uk"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8.0"
+  }
 }
