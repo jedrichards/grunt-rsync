@@ -3,18 +3,18 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        lint: {
-            all: [
-                "grunt.js",
-                "tests/*.js",
-                "tasks/*.js"
-            ]
-        },
         jshint: {
             options: {
                 "node": true,
                 "es5": true,
                 "globalstrict": true
+            },
+            files: {
+                src: [
+                    "grunt.js",
+                    "tests/*.js",
+                    "tasks/*.js"
+                ]
             }
         },
         shell: {
@@ -38,20 +38,30 @@ module.exports = function(grunt) {
         },
         vows: {
             all: {
-                files: ["tests/basic.js"],
-                reporter: "spec",
-                verbose: false,
-                silent: false,
-                colors: true
+                src: ["tests/basic.js"],
+                options: {
+                    reporter: "spec",
+                    verbose: false,
+                    silent: false,
+                    colors: true
+                }
             }
         }
     });
 
-    grunt.loadNpmTasks("grunt-shell");
     grunt.loadNpmTasks("grunt-contrib-clean");
+    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-shell");
     grunt.loadNpmTasks("grunt-vows");
 
     grunt.loadTasks("tasks");
 
-    grunt.registerTask("test","lint clean:tmp shell:tmpdir rsync vows clean:tmp");
+    grunt.registerTask("test",[
+        "jshint",
+        "clean:tmp",
+        "shell:tmpdir",
+        "rsync",
+        "vows",
+        "clean:tmp"
+    ]);
 };
