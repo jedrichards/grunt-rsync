@@ -33,7 +33,7 @@ rsync: {
         recursive: true,
         exclude: [".git*","*.scss"]
     },
-    deploy-staging: {
+    "deploy-staging": {
         src: "../dist/",
         dest: "/var/www/site",
         host: "user@staging-host",
@@ -41,7 +41,7 @@ rsync: {
         recursive: true,
         syncDest: true
     },
-    deploy-live: {
+    "deploy-live": {
         src: "../dist/",
         dest: "/var/www/site",
         host: "user@live-host",
