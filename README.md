@@ -37,6 +37,7 @@ rsync: {
         src: "../dist/",
         dest: "/var/www/site",
         host: "user@staging-host",
+        port: "1234" // Use the rsyncwrapper port option to set a non-standard ssh port if required.
         recursive: true,
         syncDest: true
     },
