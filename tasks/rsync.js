@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
         var done = this.async();
 
-        var options = this.data;
+        var options = this.options();
 
         var host = typeof options.host === "undefined" ? "" : options.host+":";
 
