@@ -26,14 +26,21 @@ module.exports = function(grunt) {
             tmp: ["tmp"]
         },
         rsync: {
+            options: {
+                args: ["--verbose"]
+            },
             single: {
-                src: "./tests/fixtures/test.txt",
-                dest: "./tmp/test.txt"
+                options: {
+                    src: "./tests/fixtures/test.txt",
+                    dest: "./tmp/test.txt"
+                }
             },
             multiple: {
-                src: "./tests/fixtures/multiple/",
-                dest: "./tmp/multiple",
-                recursive: true
+                options: {
+                    src: "./tests/fixtures/multiple/",
+                    dest: "./tmp/multiple",
+                    recursive: true
+                }
             }
         },
         vows: {
