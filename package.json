@@ -1,6 +1,6 @@
 {
   "name": "grunt-rsync",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Grunt task for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the rsyncwrapper npm module for the core functionality.",
   "main": "grunt.js",
   "repository": {
