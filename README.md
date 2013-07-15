@@ -23,30 +23,38 @@ Add a `rsync` object to your Grunt config and `grunt.loadNpmTasks("grunt-rsync")
 
 All options defined in the config are passed verbatim to [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper), so check that project's readme for more details on the possible options.
 
-For example, the following task config defines three targets. The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS. The `deploy-staging` and `deploy-live` targets could be used to copy the distribution to the relevant remote hosts over ssh.
+For example, the following task config defines three targets. The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS. The `stage` and `prod` targets could be used to copy the distribution to the relevant remote hosts over ssh.
+
+Note: `grunt-rsync` now uses the normalised target/task-level options as described in [here](http://gruntjs.com/configuring-tasks#options).
 
 ```javascript
 rsync: {
+    options: {
+        args: ["--verbose"],
+        exclude: [".git*","*.scss","node_modules"],
+        recursive: true
+    },
     dist: {
-        src: "./",
-        dest: "../dist",
-        recursive: true,
-        exclude: [".git*","*.scss"]
+        options: {
+            src: "./",
+            dest: "../dist"
+        }
     },
-    "deploy-staging": {
-        src: "../dist/",
-        dest: "/var/www/site",
-        host: "user@staging-host",
-        port: "1234", // Use the rsyncwrapper port option to set a non-standard ssh port if required.
-        recursive: true,
-        syncDest: true
+    stage: {
+        options: {
+            src: "../dist/",
+            dest: "/var/www/site",
+            host: "user@staging-host",
+            syncDestIgnoreExcl: true
+        }
     },
-    "deploy-live": {
-        src: "../dist/",
-        dest: "/var/www/site",
-        host: "user@live-host",
-        recursive: true,
-        syncDest: true
+    prod: {
+        options: {
+            src: "../dist/",
+            dest: "/var/www/site",
+            host: "user@live-host",
+            syncDestIgnoreExcl: true
+        }
     }
 }
 ```
