@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         },
         rsync: {
             options: {
-                args: ["--verbose"]
+                args: ["--verbose","--progress"]
             },
             single: {
                 options: {

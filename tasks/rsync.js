@@ -10,21 +10,23 @@ module.exports = function (grunt) {
 
         var options = this.options();
 
-        var host = typeof options.host === "undefined" ? "" : options.host+":";
+        grunt.log.writelns("rsyncing "+options.src+" >>> "+options.dest);
 
-        grunt.log.write(options.src+" > "+host+options.dest);
+        if ( !options.onStdout ) {
+            options.onStdout = function (data) {
+                grunt.log.write(data.grey);
+            };
+        }
 
         try {
             rsync(options,function (error,stdout,stderr,cmd) {
+                grunt.log.writeln("Shell command was: "+cmd);
                 if ( error ) {
-                    grunt.log.writeln(" error".red);
-                    grunt.log.writeln(cmd.grey);
+                    grunt.log.error();
                     grunt.log.writeln(error.toString().red);
                     done(false);
                 } else {
-                    grunt.log.writeln(" done".green);
-                    grunt.log.writeln(cmd.grey);
-                    grunt.log.write(stdout);
+                    grunt.log.ok();
                     done(true);
                 }
             });
