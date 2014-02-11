@@ -4,6 +4,7 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release noties
 
+- `>= 0.3.0` Updated to `rsyncwrapper 0.1.0`. Some changes under the hood there, so a minor version bump seem appropriate. `src` values that include wildcards should now be properly expanded by the shell.
 - `>= 0.2.0` Updated task to properly use the config [options](http://gruntjs.com/configuring-tasks#options) object
 - `>= 0.1.0` Grunt `0.4` compatibility
 - `<= 0.0.5` Initial releases, Grunt `0.3` compatible
@@ -62,7 +63,11 @@ rsync: {
 
 ### Wildcards, exclude patterns, globbing etc.
 
-Any wildcards, exclude patterns and globbing of paths are handled by rsync itself. So importantly this task does **not** use Grunt's in-built path expanding and globbing. For more information on rsync's syntax check the [rsync manpages](http://linux.die.net/man/1/rsync). For information about how this task's options relate to rsync's functionality check [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper).
+Any wildcards expansions and/or exclude patterns and globbing of paths are handled either by the shell or rsync itself. So importantly this task does **not** use Grunt's in-built path expanding and globbing.
+
+For more information on rsync's syntax check the [rsync manpages](http://linux.die.net/man/1/rsync).
+
+For information about how this task's options relate to rsync's functionality check [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper).
 
 ### Testing
 
