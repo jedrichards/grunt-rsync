@@ -27,7 +27,7 @@ All options defined in the config are passed verbatim to [rsyncwrapper](https://
 
 For example, the following task config defines three targets. The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS. The `stage` and `prod` targets could be used to copy the distribution to the relevant remote hosts over ssh.
 
-Note: `grunt-rsync` now uses the normalised target/task-level options as described in [here](http://gruntjs.com/configuring-tasks#options).
+(Note: `grunt-rsync` now uses the normalised target/task-level options as described in [here](http://gruntjs.com/configuring-tasks#options).)
 
 ```javascript
 rsync: {
@@ -74,7 +74,4 @@ For information about how this task's options relate to rsync's functionality ch
 Basic tests are run on [Vows Async BDD](http://vowsjs.org/) via this package's Gruntfile. To test `grunt-rsync` clone the repo and install the devDependancies:
 
     $ npm install --dev
-
-Next you'll have to install the Node `vows` npm package globally, and ensure you've got `grunt-cli` working. Then:
-
     $ npm test
