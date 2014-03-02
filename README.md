@@ -4,6 +4,7 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release notes
 
+- `>= 0.4.0` Updated to `rsyncwrapper 0.2.0`.
 - `>= 0.3.0` Updated to `rsyncwrapper 0.1.0`. Some changes under the hood there, so a minor version bump seems appropriate. `src` values that include wildcards should now be properly expanded by the shell.
 - `>= 0.2.0` Updated task to properly use the config [options](http://gruntjs.com/configuring-tasks#options) object
 - `>= 0.1.0` Grunt `0.4` compatibility

@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
         if ( !options.onStdout ) {
             options.onStdout = function (data) {
-                grunt.log.write(data.grey);
+                grunt.log.write(data.toString("utf8").grey);
             };
         }
 
