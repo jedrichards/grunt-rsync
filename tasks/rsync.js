@@ -20,10 +20,10 @@ module.exports = function (grunt) {
 
         try {
             rsync(options,function (error,stdout,stderr,cmd) {
-                grunt.log.writeln("Shell command was: "+cmd);
                 if ( error ) {
                     grunt.log.error();
                     grunt.log.writeln(error.toString().red);
+                    grunt.log.writeln("Shell command was: "+cmd);
                     done(false);
                 } else {
                     grunt.log.ok();
