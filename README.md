@@ -4,7 +4,8 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release notes
 
-- `0.6.0` Updated to `rsyncwrapper 0.4.0`. 
+- `0.6.2` Updated to `rsyncwrapper 0.4.1`.
+- `0.6.0` Updated to `rsyncwrapper 0.4.0`.
 - `0.5.0` Updated to `rsyncwrapper 0.3.0`.
 - `0.4.0` Updated to `rsyncwrapper 0.2.0`.
 - `0.3.0` Updated to `rsyncwrapper 0.1.0`. Some changes under the hood there, so a minor version bump seems appropriate. `src` values that include wildcards should now be properly expanded by the shell.
@@ -26,11 +27,21 @@ A reasonably modern version of rsync (>=`v2.6.9`) in your `PATH`.
 
 Add a `rsync` object to your Grunt config and `grunt.loadNpmTasks("grunt-rsync")`.
 
-All options defined in the config are passed verbatim to [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper), so check that project's readme for more details on the possible options.
+> Note: `grunt-rsync` uses the normalised target/task-level options for multitasks as described [here](http://gruntjs.com/configuring-tasks#options).)
 
-For example, the following task config defines three targets. The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS. The `stage` and `prod` targets could be used to copy the distribution to the relevant remote hosts over ssh.
+### Options
 
-(Note: `grunt-rsync` now uses the normalised target/task-level options as described in [here](http://gruntjs.com/configuring-tasks#options).)
+This task uses [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper) under the hood.
+
+All options are passed verbatim to rsyncwrapper and are documented in that project's README [here](https://github.com/jedrichards/rsyncwrapper#options).
+
+### Example
+
+The following task config defines three targets.
+
+The `dist` target could be used to create a distribution of a website ready for deployment, excluding files related to Git and uncompiled SCSS.
+
+The `stage` and `prod` targets could be used to copy the distribution to the relevant remote hosts over ssh.
 
 ```javascript
 rsync: {
@@ -50,7 +61,7 @@ rsync: {
             src: "../dist/",
             dest: "/var/www/site",
             host: "user@staging-host",
-            syncDestIgnoreExcl: true
+            delete: true // Careful this option could cause data loss, read the docs!
         }
     },
     prod: {
@@ -58,7 +69,7 @@ rsync: {
             src: "../dist/",
             dest: "/var/www/site",
             host: "user@live-host",
-            syncDestIgnoreExcl: true
+            delete: true // Careful this option could cause data loss, read the docs!
         }
     }
 }
