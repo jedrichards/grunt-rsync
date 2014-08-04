@@ -1,5 +1,11 @@
 ## grunt-rsync
 
+![npm version](http://img.shields.io/npm/v/grunt-rsync.svg?style=flat)
+
+![npm downloads per month](http://img.shields.io/npm/dm/grunt-rsync.svg?style=flat)
+
+![david dependencies](http://img.shields.io/david/jedrichards/grunt-rsync.svg?style=flat)
+
 A Grunt multitask for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper) npm module for the core functionality.
 
 ### Release notes
@@ -12,8 +18,6 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 - `0.2.0` Updated task to properly use the config [options](http://gruntjs.com/configuring-tasks#options) object
 - `0.1.0` Grunt `0.4` compatibility
 - `0.0.5` Initial releases, Grunt `0.3` compatible
-
-If you're upgrading to Grunt `v0.4` you shouldn't need to make any changes to your existing `grunt-rsync` task config, just be sure to `npm install` the latest version. But be sure to place an issue if you have any problems.
 
 ### Prerequisites
 
