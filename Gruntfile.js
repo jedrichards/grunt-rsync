@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         jshint: {
             options: {
                 "node": true,
-                "es5": true,
                 "globalstrict": true
             },
             files: {
