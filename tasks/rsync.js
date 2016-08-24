@@ -2,13 +2,35 @@
 
 var rsync = require("rsyncwrapper");
 
+var escapeSpaces = function(path) {
+    if (typeof path === "string") {
+        return path.replace(/\b\s/g, "\\ ");
+    } else {
+        return path;
+    }
+};
+
+var escapeSpacesInSrcAndDestPaths = function(options) {
+    // Escape paths in the src, dest, include, exclude, and excludeFirst arguments
+    ["src", "dest", "include", "exclude", "excludeFirst"].forEach(function(optionKey) {
+        var option = options[optionKey];
+        if (typeof option === "string") {
+            options[optionKey] = escapeSpaces(option);
+        } else if (Array.isArray(option) === true) {
+            options[optionKey] = option.map(escapeSpaces);
+        }
+    });
+
+    return options;
+};
+
 module.exports = function (grunt) {
 
     grunt.task.registerMultiTask("rsync","Performs rsync tasks.",function () {
 
         var done = this.async();
 
-        var options = this.options();
+        var options = escapeSpacesInSrcAndDestPaths( this.options() );
 
         grunt.log.writelns("rsyncing "+options.src+" >>> "+options.dest);
 
