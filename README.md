@@ -4,10 +4,13 @@
 ![npm downloads per month](http://img.shields.io/npm/dm/grunt-rsync.svg?style=flat)
 ![david dependencies](http://img.shields.io/david/jedrichards/grunt-rsync.svg?style=flat)
 
-A Grunt multitask for accessing the file copying and syncing capabilities of the rsync command line utility. Uses the [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper) npm module for the core functionality.
+A Grunt multitask for accessing the file copying and syncing capabilities of the rsync command line utility.
+
+:warning: Looking for a non-Grunt related simple Node wrapper for rsync? Try this repo's parent tool [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper) for the core functionality.
 
 ### Release notes
 
+- `2.0.0` Updated to `rsyncwrapper 2.0.0`. Updated dev dependencies. Tested on Grunt `1.0.1`.
 - `1.0.0` Updated to `rsyncwrapper 1.0.0`. Tested on Node `5.3.0`. `grunt` is no longer a peer dependency.
 - `0.6.2` Updated to `rsyncwrapper 0.4.1`.
 - `0.6.0` Updated to `rsyncwrapper 0.4.0`.
