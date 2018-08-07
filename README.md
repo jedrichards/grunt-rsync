@@ -10,6 +10,7 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release notes
 
+- `3.0.0` Updated to `rsyncwrapper 3.0.0`.
 - `2.0.0` Updated to `rsyncwrapper 2.0.0`. Updated dev dependencies. Tested on Grunt `1.0.1`.
 - `1.0.0` Updated to `rsyncwrapper 1.0.0`. Tested on Node `5.3.0`. `grunt` is no longer a peer dependency.
 - `0.6.2` Updated to `rsyncwrapper 0.4.1`.
